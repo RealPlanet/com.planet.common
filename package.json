@@ -1,0 +1,20 @@
+{
+  "name": "com.planet.common",
+  "version": "1.0.0",
+  "displayName": "Planet Tools",
+  "description": "A collection of common scripts that I may use in multiple projects",
+  "unity": "2020.2",
+  "keywords": [
+    "tools",
+    "extensions",
+    "planet"
+  ],
+  "author": {
+    "name": "Planet"
+  },
+  "type": "library",
+  "hideInEditor": false,
+  "dependencies": {
+    "com.unity.inputsystem": "1.0.0"
+  }
+}
