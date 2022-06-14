@@ -28,12 +28,6 @@ namespace Project
             return UnityEngine.Random.Range(interval.x, interval.y);
         }
 
-        public static string GetLocalizedString(string Table, string Reference)
-        {
-            var Operation = LocalizationSettings.StringDatabase.GetLocalizedStringAsync(Table, Reference);
-            return Operation.Result;
-        }
-
         public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
         {
             foreach (T item in source)
