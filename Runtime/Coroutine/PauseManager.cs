@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.Common
+namespace Planet.Common.PauseSystem
 {
     /*
      *  This class should handle pause for everything in the game:
@@ -44,7 +44,7 @@ namespace Assets.Scripts.Common
             // Pause Physics system and AudioSystem
             Time.timeScale = IsPaused ? 0f : 1f;
             AudioListener.pause = IsPaused;
-            
+
 
             //Notify all listeners
             OnPause?.Invoke(IsPaused);
@@ -56,7 +56,7 @@ namespace Assets.Scripts.Common
         /// <param name="WaitAmount"></param> Amount of time to wait
         public static IEnumerator WaitOrPause(float WaitAmount)
         {
-            while(WaitAmount > 0)
+            while (WaitAmount > 0)
             {
                 yield return WaitIfPaused();
                 WaitAmount -= Time.deltaTime;
@@ -91,6 +91,6 @@ namespace Assets.Scripts.Common
             yield return CommonCoroutineTimings.WaitFrame;
         }
 
-     
+
     }
 }

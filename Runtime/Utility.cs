@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Project
+namespace Planet.Generic
 {
     public static class Utility
     {

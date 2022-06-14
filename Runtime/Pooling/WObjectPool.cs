@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace Assets.Scripts.Common
+namespace Planet.Performance.Pooling
 {
     public static class WObjectPool
     {

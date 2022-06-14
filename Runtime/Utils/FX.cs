@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Planet.Utils
+namespace Planet.Effects
 {
     /*
      * After modding for so many years Call of duty I got used to they FX system so I decided to make a wrapper around Unity's FX system

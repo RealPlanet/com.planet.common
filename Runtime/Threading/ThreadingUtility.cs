@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
+namespace Planet.Threading{
+	
 #if UNITY_EDITOR
 [InitializeOnLoad]
 #endif
@@ -39,4 +41,6 @@ public static class ThreadingUtility
                 quitSource.Cancel();
         }
 #endif
+}
+
 }
