@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Volume = AudioMasterVolume;
+
 
 namespace Planet.Audio.Engine
 {
+	using Volume = AudioMasterVolume;
 	public static class AudioEngine
 	{
 		public static void PlayAudio(AudioClip Clip, GameObject Parent, Volume.BUS Bus = Volume.BUS.FX, bool Looping = false)

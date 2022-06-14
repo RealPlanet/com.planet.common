@@ -1,7 +1,7 @@
 using UnityEngine;
 
-using Planet.Coroutines{
-
+namespace Planet.Coroutines
+{
     public static class CommonCoroutineTimings
     {
         public static WaitForEndOfFrame WaitFrame = new WaitForEndOfFrame();

@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Volume = AudioMasterVolume;
+
 
 namespace Planet.Audio.Engine{
-public class AudioPlayer : MonoBehaviour
+	using Volume = AudioMasterVolume;
+	public class AudioPlayer : MonoBehaviour
 {
     private AudioSource _Source;
     public AudioMasterVolume.BUS Bus;
