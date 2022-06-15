@@ -1,9 +1,7 @@
 {
     "name": "Project.Runtime.Core.AudioEngine",
     "rootNamespace": "",
-    "references": [
-        "GUID:e8ea60d4deae87749b67184638e80188"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

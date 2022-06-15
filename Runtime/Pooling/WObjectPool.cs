@@ -26,7 +26,7 @@ namespace Planet.Performance.Pooling
 
             public GameObject Get() => GetItemFromPool(this);
             public void Release(GameObject obj) => DisposeToPool(this, obj);
-
+            
             public void DisposePool()
             {
                 RegisteredPools.Remove(PrefabRef);
@@ -53,11 +53,34 @@ namespace Planet.Performance.Pooling
 
         private static Dictionary<GameObject, ExtendedObjectPool> RegisteredPools = new Dictionary<GameObject, ExtendedObjectPool>();
 
-        public static ExtendedObjectPool RegisterNewPool(GameObject Prefab, Func<GameObject> createFunc, Action<GameObject> actionOnGet = null, Action<GameObject> actionOnRelease = null,
-                                                Action<GameObject> actionOnDestroy = null, bool collectionCheck = true, int defaultCapacity = 10,
-                                                int maxSize = 10000)
+        public static ExtendedObjectPool RegisterNewPool(GameObject Prefab, Func<GameObject> createFunc = null, Action<GameObject> actionOnGet = null, Action<GameObject> actionOnRelease = null,
+                                                Action<GameObject> actionOnDestroy = null, bool collectionCheck = true, int defaultCapacity = 10, int maxSize = 10000)
         {
-            ObjectPool<GameObject> Pool = new ObjectPool<GameObject>(createFunc,
+            if(createFunc == null)
+            {
+                createFunc = () =>
+                {
+                    GameObject obj = GameObject.Instantiate(Prefab);
+                    obj.SetActive(false);
+                    return obj;
+                };
+            }
+            if(actionOnRelease is null)
+            {
+                actionOnRelease = (instance) =>
+                {
+                    instance.SetActive(false);
+                    instance.transform.position = Vector3.zero;
+                    instance.transform.rotation = Quaternion.identity;
+                };
+            }
+            if(actionOnDestroy == null)
+            {
+                actionOnDestroy = (obj) => GameObject.Destroy(obj);
+            }
+
+
+            ObjectPool<GameObject> Pool = new   (createFunc,
                                                 actionOnGet,
                                                 actionOnRelease,
                                                 actionOnDestroy,
@@ -69,6 +92,8 @@ namespace Planet.Performance.Pooling
             RegisteredPools.Add(Prefab, Wrapper);
             return Wrapper;
         }
+
+        
     }
 }
 
