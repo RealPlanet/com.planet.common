@@ -1,6 +1,6 @@
 {
   "name": "com.planet.common",
-  "version": "1.2",
+  "version": "1.2.0",
   "displayName": "Planet Tools",
   "description": "A collection of common scripts that I may use in multiple projects",
   "unity": "2020.2",
